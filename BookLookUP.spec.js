@@ -11,7 +11,7 @@ function BookLookUP(AmazonService) {
 test('BookLookUP', () => {
 
     const AmazonService = jest.fn('123456789abcd')
-    .mockReturnValue({ name: 'Dota2', cover: '58160388@gmail.com', isbn:'123456789abcd'})
+    .mockReturnValue({ bookname: 'Dota2', cover: '58160388@gmail.com', isbn:'123456789abcd'})
 
     
     let app = new BookLookUP(AmazonService)
@@ -20,9 +20,12 @@ test('BookLookUP', () => {
 
     expect(AmazonService).toHaveBeenCalled()
     expect(AmazonService).toHaveBeenCalledWith(isbn)
-    expect(value).toEqual({ name: 'Dota2', cover: '58160388@gmail.com', isbn:'123456789abcd'})
-    expect(value).toHaveProperty('name')
+    expect(value).toEqual({ bookname: 'Dota2', cover: '58160388@gmail.com', isbn:'123456789abcd'})
+    expect(value).toHaveProperty('bookname')
     expect(value).toHaveProperty('cover')
     expect(value).toHaveProperty('isbn')
+    expect(value.bookname).toBe("Dota2")
+    expect(value.cover).toBe("58160388@gmail.com")
+    expect(value.isbn).toBe('123456789abcd')
 
 })
