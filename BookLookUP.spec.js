@@ -27,5 +27,6 @@ test('BookLookUP', () => {
     expect(value.bookname).toBe("Dota2")
     expect(value.cover).toBe("58160388@gmail.com")
     expect(value.isbn).toBe('123456789abcd')
+    expect(value.isbn).toHaveLength(13)
 
 })
