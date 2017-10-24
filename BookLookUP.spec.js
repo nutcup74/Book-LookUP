@@ -20,5 +20,6 @@ test('BookLookUP', () => {
 
     expect(AmazonService).toHaveBeenCalled()
     expect(AmazonService).toHaveBeenCalledWith(isbn)
+    expect(value).toEqual({ name: 'Dota2', cover: '58160388@gmail.com', isbn:'123456789abcd'})
 
 })
